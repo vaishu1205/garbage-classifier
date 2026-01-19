@@ -8,15 +8,17 @@ class Settings(BaseSettings):
     # Application
     APP_NAME: str = "Japanese Garbage Classifier API"
     APP_VERSION: str = "1.0.0"
-    ENVIRONMENT: str = "development"
+    ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
     
     HOST: str = "0.0.0.0"
     PORT: int = int(os.getenv("PORT", 8000))
+    
     # CORS
     ALLOWED_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://localhost:5173",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://garbage-classifier-frontend-igxh.onrender.com"
     ]
     
     # Model
@@ -34,6 +36,9 @@ class Settings(BaseSettings):
     
     # Logging
     LOG_LEVEL: str = "INFO"
+    
+    # Timeout settings
+    REQUEST_TIMEOUT: int = 120  # 2 minutes for slow connections
     
     class Config:
         env_file = ".env"
