@@ -1,10 +1,10 @@
-fastapi==0.115.6
-uvicorn[standard]==0.30.6
-python-multipart==0.0.9
+fastapi
+uvicorn[standard]
+python-multipart
 
-tensorflow==2.16.1
-numpy==1.26.4
-pillow==10.4.0
+tensorflow
+numpy
+pillow
 
 pydantic
 pydantic-settings
