@@ -24,10 +24,7 @@ Thumbs.db
 .idea/
 *.swp
 
-# Models (too large for Git)
-*.keras
-*.h5
-*.pb
+
 
 # Logs
 *.log
