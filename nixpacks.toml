@@ -1,11 +1,8 @@
 [phases.setup]
-nixPkgs = ["python311", "pip"]
+nixPkgs = ["python313"]
 
 [phases.install]
-cmds = ["cd backend && python -m pip install --upgrade pip", "cd backend && python -m pip install -r requirements.txt"]
-
-[phases.build]
-cmds = ["cd backend && echo 'Model verification' && ls -lh models/"]
+cmds = ["cd backend && pip install -r requirements.txt"]
 
 [start]
-cmd = "cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+cmd = "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
